@@ -30,6 +30,7 @@ namespace Photo_Metadata_Organizer.Controllers
             actionChoices.Add("Search", "Search");
             actionChoices.Add("addnew", "Addnew");
             actionChoices.Add("filepathbuilder", "Filepathbuilder");
+            //this is to get it to push
             ViewBag.actions = actionChoices;
 
             return View();
