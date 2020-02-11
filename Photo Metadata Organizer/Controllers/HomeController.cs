@@ -26,10 +26,10 @@ namespace Photo_Metadata_Organizer.Controllers
         public IActionResult Index()
         {
             Dictionary<string, string> actionChoices = new Dictionary<string, string>();
-            actionChoices.Add("listall", "Listall");
+            actionChoices.Add("ListAll", "List All");
             actionChoices.Add("Search", "Search");
-            actionChoices.Add("addnew", "Addnew");
-            actionChoices.Add("filepathbuilder", "Filepathbuilder");
+            actionChoices.Add("AddNew", "Add Photos");
+            actionChoices.Add("FilePathBuilder", "The File Path Builder");
             //this is to get it to push
             ViewBag.actions = actionChoices;
 
@@ -49,18 +49,18 @@ namespace Photo_Metadata_Organizer.Controllers
 
         public IActionResult Search()
         {
-            if (HttpContext.Session.GetString("Type") == "user")
-            {
+            //if (HttpContext.Session.GetString("Type") == "user")
+           // {
                 
                 
-                return View();
+                return View("Search");
                     //look for the table where the data is and return enumurables. 
-            }
-            else
-            {
+           // }
+            //else
+           // {
                 //redirect to login page
-                return View();
-            }
+               // return View();
+            //}
         }
     }
 
