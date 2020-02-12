@@ -5,7 +5,7 @@ using Photo_Metadata_Organizer.Models;
 
 namespace Photo_Metadata_Organizer.ViewModels
 {
-    public class SearchJobsViewModel : BaseViewModel
+    public class SearchPhotoViewModel : BaseViewModel
     {
         // TODO #7.1 - Extract members common to JobFieldsViewModel
         // to BaseViewModel

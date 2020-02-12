@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Photo_Metadata_Organizer.Data.Migrations;
 using Photo_Metadata_Organizer.Models;
 
 namespace Photo_Metadata_Organizer.ViewModels
 {
     public class BaseViewModel
     {
-        // All columns, for display
+        //All columns, for display
         public List<PhotoField> Columns { get; set; }
 
         // The column to search, defaults to all
@@ -14,15 +15,14 @@ namespace Photo_Metadata_Organizer.ViewModels
 
         // View title 
         public string Title { get; set; } = "";
-
         public BaseViewModel()
         {
-            Columns = new List<PhotoField>();
+            //Columns = new List<PhotoField>();
 
-            foreach (PhotoField enumVal in Enum.GetValues(typeof(PhotoField)))
-            {
-                Columns.Add(enumVal);
-            }
+            //foreach (PhotoField enumVal in Enum.GetValues(typeof(PhotoField)))
+            //{
+            //    Columns.Add(enumVal);
+            //}
         }
     }
 }

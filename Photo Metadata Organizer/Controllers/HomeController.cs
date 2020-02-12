@@ -13,7 +13,7 @@ namespace Photo_Metadata_Organizer.Controllers
 {
     public class HomeController : Controller
     {
-        
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -50,18 +50,32 @@ namespace Photo_Metadata_Organizer.Controllers
         public IActionResult Search()
         {
             //if (HttpContext.Session.GetString("Type") == "user")
-           // {
-                
-                
-                return View("Search");
-                    //look for the table where the data is and return enumurables. 
-           // }
+            // {
+
+
+            return View("Search");
+            //look for the table where the data is and return enumurables. 
+            // }
             //else
-           // {
-                //redirect to login page
-               // return View();
+            // {
+            //redirect to login page
+            // return View();
             //}
         }
-    }
 
+        public IActionResult ListAll()
+        {
+            return View("Search");
+        }
+        public IActionResult FilePathBuilder()
+        {
+            return View("FilePathBuilder");
+        }
+        public IActionResult AddNew()
+        {
+            return View("AddNew");
+        }
+
+    }
 }
+

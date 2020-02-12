@@ -4,17 +4,24 @@
 }
 
 
-<h1>Search</h1>
+
+@model Photo_Metadata_Organizer.ViewModels.SearchPhotoViewModel
+<h1> Search </h1>
+
+<h2> this is an update</h2>
 
 
+@*<h1>@Model.Title</h1>
+<form action="/Search/Results">
+    <p>
+        @foreach (var column in Model.Columns)
+        {
+            var checkedColumn = column.Equals(Model.Column);
 
-@model Photo_Metadata_Organizer.ViewModels.SearchJobsViewModel
-
-<h1>@Model.Title</h1>
-
-                       id="@column"
-                       value="@column"
-                       checked="@checkedColumn" />
+            <span>
+                id="@column"
+                value="@column"
+                checked="@checkedColumn" />
                 <label for="@column">@column</label>
             </span>
         }
@@ -33,31 +40,35 @@
 @if (Model.Photos != null)
 {
 
-    <h3>@Model.Jobs.Count Result(s)</h3>
+    <h3>@Model.Photos.Count Result(s)</h3>
 
-    @foreach (var job in Model.Jobs)
+    @foreach (var job in Model.Photos)
     {
-        <table class="job-listing">
-            <tr>
-                <td>Name</td>
-                <td>@job.Name</td>
-            </tr>
-            <tr>
-                <td>Employer</td>
-                <td>@job.Employer</td>
-            </tr>
-            <tr>
-                <td>Location</td>
-                <td>@job.Location</td>
-            </tr>
-            <tr>
-                <td>Skill</td>
-                <td>@job.CoreCompetency</td>
-            </tr>
-            <tr>
-                <td>Position Type</td>
-                <td>@job.PositionType</td>
-            </tr>
-        </table>
+<table class="job-listing">
+    <tr>
+        <td>Name</td>
+        <td>@Photo.Name</td>
+    </tr>
+    <tr>
+        <td>Date and Time</td>
+        <td>@Photo.Datetime</td>
+    </tr>
+    <tr>
+        <td>Aperature</td>
+        <td>@Photo.Aperature</td>
+    </tr>
+    <tr>
+        <td>Exposure</td>
+        <td>@Photo.Exposure</td>
+    </tr>
+    <tr>
+        <td>ISO</td>
+        <td>@Photo.ISO</td>
+    </tr>
+    <tr>
+        <td>Focal Length</td>
+        <td>@photo.focallength</td>
+    </tr>
+</table>
     }
-}
+}*@
