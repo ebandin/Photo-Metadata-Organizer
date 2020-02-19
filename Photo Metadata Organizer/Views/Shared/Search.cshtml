@@ -5,13 +5,13 @@
 
 
 
-@model Photo_Metadata_Organizer.ViewModels.SearchPhotoViewModel
+@model Photo_Metadata_Organizer.Models.Photo
 <h1> Search </h1>
 
 <h2> this is an update</h2>
 
 
-@*<h1>@Model.Title</h1>
+<h1>@Model.Title</h1>
 <form action="/Search/Results">
     <p>
         @foreach (var column in Model.Columns)
@@ -37,38 +37,42 @@
 
 <hr />
 
-@if (Model.Photos != null)
+@if (Model.PhotoName != null)
 {
 
     <h3>@Model.Photos.Count Result(s)</h3>
 
-    @foreach (var job in Model.Photos)
+    @foreach (var job in Model.Photo)
     {
 <table class="job-listing">
     <tr>
         <td>Name</td>
-        <td>@Photo.Name</td>
+        <td>@Model.PhotoName</td>
     </tr>
     <tr>
         <td>Date and Time</td>
-        <td>@Photo.Datetime</td>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <td>Date and Time</td>
+        <td>@Model.DateTime</td>
     </tr>
     <tr>
         <td>Aperature</td>
-        <td>@Photo.Aperature</td>
+        <td>@Model.FocalLength</td>
     </tr>
     <tr>
         <td>Exposure</td>
-        <td>@Photo.Exposure</td>
+        <td>@Model.Exposure</td>
     </tr>
     <tr>
         <td>ISO</td>
-        <td>@Photo.ISO</td>
+        <td>@Model.ISO</td>
     </tr>
     <tr>
         <td>Focal Length</td>
-        <td>@photo.focallength</td>
+        <td>@Model.WhiteBalance</td>
     </tr>
 </table>
     }
-}*@
+}

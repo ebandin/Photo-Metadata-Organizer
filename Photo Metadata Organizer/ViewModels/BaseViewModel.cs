@@ -11,18 +11,18 @@ namespace Photo_Metadata_Organizer.ViewModels
         public List<PhotoField> Columns { get; set; }
 
         // The column to search, defaults to all
-        public PhotoField Column { get; set; } = PhotoField.All;
+        //public PhotoField Column { get; set; } = PhotoField.;
 
         // View title 
-        public string Title { get; set; } = "";
+        //public string Title { get; set; } = "";
         public BaseViewModel()
         {
-            //Columns = new List<PhotoField>();
+            Columns = new List<PhotoField>();
 
-            //foreach (PhotoField enumVal in Enum.GetValues(typeof(PhotoField)))
-            //{
-            //    Columns.Add(enumVal);
-            //}
+            foreach (PhotoField enumVal in Enum.GetValues(typeof(PhotoField)))
+            {
+                Columns.Add(enumVal);
+            }
         }
     }
 }
