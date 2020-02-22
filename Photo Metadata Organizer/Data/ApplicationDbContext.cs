@@ -11,8 +11,9 @@ namespace Photo_Metadata_Organizer.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
-        { }
-
-            public DbSet<PhotoField> Photo { get; set; }
+        {
         }
+
+       //  public DbSet<PhotoField> Photo { get; set; }
     }
+}
