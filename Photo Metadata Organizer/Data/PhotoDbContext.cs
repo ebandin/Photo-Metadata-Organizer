@@ -7,12 +7,13 @@ using Photo_Metadata_Organizer.Data.Migrations;
 
 namespace Photo_Metadata_Organizer.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class PhotoDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public PhotoDbContext(DbContextOptions<PhotoDbContext> options)
             : base(options)
         { }
 
-            public DbSet<PhotoField> Photo { get; set; }
-        }
+        public DbSet<PhotoField> Photo { get; set; }
     }
+}
+

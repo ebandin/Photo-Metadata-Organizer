@@ -11,7 +11,7 @@
 <h2> this is an update</h2>
 
 
-<h1>@Model.Title</h1>
+@*<h1>@Model.Title</h1>
 <form action="/Search/Results">
     <p>
         @foreach (var column in Model.Columns)
@@ -25,26 +25,26 @@
                 <label for="@column">@column</label>
             </span>
         }
-    </p>
+    </p>*@
 
-    <p>
+    @*<p>
         <label asp-for="Value"></label>
         <input asp-for="Value" />
     </p>
 
     <input type="submit" value="Search" />
-</form>
+</form>*@
 
 <hr />
 
 @if (Model.PhotoName != null)
 {
 
-    <h3>@Model.Photos.Count Result(s)</h3>
+   
 
-    @foreach (var job in Model.Photo)
+    @*@foreach (var Photo in Model)*@
     {
-<table class="job-listing">
+<table class="photo-listing">
     <tr>
         <td>Name</td>
         <td>@Model.PhotoName</td>
