@@ -1,11 +1,61 @@
-﻿
+﻿@using  Photo_Metadata_Organizer.Models;
+
+@model IEnumerable<Photo>
+
+
 @{
     ViewData["Title"] = "ListAll";
 }
 
 
-
-@model Photo_Metadata_Organizer.ViewModels.SearchPhotoViewModel
-
 <h1> List All </h1>
 <h2> an update </h2>
+
+
+<div style="font-family:Arial">
+ <h1> List All</h1>   
+    <ul>
+
+        @foreach  (Photo photo in @Model)
+        {
+        <li>
+            @Html.ActionLink(photo.PhotoName, "Details", new { id = photo.Id })
+
+        </li>
+        }
+    </ul>
+    </div>"
+
+
+@*@foreach (var Photo in Model)
+{
+    <table class="photo-listing">
+        <tr>
+            <td>Name</td>
+            <td>@Model.PhotoName</td>
+        </tr>
+        <tr>
+            <td>Date and Time</td>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <td>Date and Time</td>
+            <td>@Model.DateTime</td>
+        </tr>
+        <tr>
+            <td>Aperature</td>
+            <td>@Model.FocalLength</td>
+        </tr>
+        <tr>
+            <td>Exposure</td>
+            <td>@Model.Exposure</td>
+        </tr>
+        <tr>
+            <td>ISO</td>
+            <td>@Model.ISO</td>
+        </tr>
+        <tr>
+            <td>Focal Length</td>
+            <td>@Model.WhiteBalance</td>
+        </tr>
+    </table>*@

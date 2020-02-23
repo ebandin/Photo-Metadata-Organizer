@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+
 namespace Photo_Metadata_Organizer
 {
     public class Startup
@@ -30,14 +31,17 @@ namespace Photo_Metadata_Organizer
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
+
             //services.AddDbContext<PhotoDbContext>(options =>
-            //  options.UseSqlServer(
+            //  options.UseSqlServer( 
             // Configuration.GetConnectionString("PhotoDbContext")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

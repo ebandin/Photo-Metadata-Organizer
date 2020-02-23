@@ -9,12 +9,14 @@ using Microsoft.Extensions.Logging;
 using Photo_Metadata_Organizer.Models;
 
 
+
 namespace Photo_Metadata_Organizer.Controllers
 {
     public class HomeController : Controller
     {
 
         private readonly ILogger<HomeController> _logger;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -25,6 +27,11 @@ namespace Photo_Metadata_Organizer.Controllers
 
         public IActionResult Index()
         {
+
+            PhotoContext photoContext = new PhotoContext();
+            List<Photo> photos = photoContext.Photos.ToList();
+            List<User> users = photoContext.Users.ToList();
+
             Dictionary<string, string> actionChoices = new Dictionary<string, string>();
             actionChoices.Add("ListAll", "List All");
             actionChoices.Add("Search", "Search");
@@ -65,7 +72,9 @@ namespace Photo_Metadata_Organizer.Controllers
 
         public IActionResult ListAll()
         {
-            return View("Search");
+            PhotoContext photoContext = new PhotoContext();
+            List<Photo> photos = photoContext.Photos.ToList();
+            return View("ListAll", photos);
         }
         public IActionResult FilePathBuilder()
         {
