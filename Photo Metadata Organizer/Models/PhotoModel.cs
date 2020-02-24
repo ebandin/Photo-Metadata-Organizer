@@ -35,6 +35,8 @@ namespace Photo_Metadata_Organizer.Models
         [Required]
         public int WhiteBalance { get; set; }
 
+        public List<Photo> Photos { get; set; }
+
     }
 
 

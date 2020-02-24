@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Photo_Metadata_Organizer.Data;
 using Photo_Metadata_Organizer.Models;
 
 
@@ -28,9 +29,7 @@ namespace Photo_Metadata_Organizer.Controllers
         public IActionResult Index()
         {
 
-            PhotoContext photoContext = new PhotoContext();
-            List<Photo> photos = photoContext.Photos.ToList();
-            List<User> users = photoContext.Users.ToList();
+
 
             Dictionary<string, string> actionChoices = new Dictionary<string, string>();
             actionChoices.Add("ListAll", "List All");
@@ -72,7 +71,7 @@ namespace Photo_Metadata_Organizer.Controllers
 
         public IActionResult ListAll()
         {
-            PhotoContext photoContext = new PhotoContext();
+            ApplicationDbContext photoContext = new ApplicationDbContext();
             List<Photo> photos = photoContext.Photos.ToList();
             return View("ListAll", photos);
         }
